@@ -12,10 +12,7 @@ def plot_basic_close(figsize, df, pair):
     plt.yticks(fontsize=15)
     plt.legend(['Close'], prop={'size': 10})
     
-    # data labels
-    for i, j in zip(df.date, all_df['Adj Close']):
-        plt.text(i, j, str(j), ha='center', va='bottom')
-    
+   
     plt.show()
     
     
