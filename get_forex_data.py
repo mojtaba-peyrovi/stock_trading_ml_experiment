@@ -7,6 +7,8 @@ def get_daily_data(pair, start_date, end_date):
     # Set the ticker as 'EURUSD=X'
     df = yf.download(f'{pair}=X', start=start_date, end=end_date)
     
+    # round close values
+    df['Adj Close'] = df['Adj Close'].apply(lambda x: round(x,2))
     # Set the index to a datetime object
     # df.index = pd.to_datetime(df.index)
     
